@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+	<metadata>
+		<id>GMO.Umbraco.PropertyHelper</id>
+		<version>1.0.0</version>
+		<title>GMO.Umbraco.PropertyHelper</title>
+		<authors>Gunnar Már Óttarsson</authors>
+		<owners>Gunnar Már Óttarsson</owners>
+		<licenseUrl>https://github.com/gunnim</licenseUrl>
+		<projectUrl>https://github.com/gunnim/GMO.Umbraco.PropertyHelper</projectUrl>
+		<iconUrl>https://a-v2.sndcdn.com/assets/images/sc-icons/favicon-2cadd14b.ico</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Handles retrieval of various types of property values.</description>
+		<releaseNotes>Initial.</releaseNotes>
+		<copyright>Copyright 2017</copyright>
+		<tags></tags>
+	</metadata>
+</package>
