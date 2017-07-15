@@ -1,6 +1,6 @@
 GMO.Umbraco.PropertyHelper
 
-I find this helper especially useful when retrieving values i intended to serialize as json.
+I find this helper especially useful when retrieving values i intend to serialize as json.
 
 Gets an object value from property.
 Handles Vorto values, IPublishedContent values,
