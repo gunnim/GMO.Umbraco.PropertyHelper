@@ -1,4 +1,5 @@
 ﻿using Our.Umbraco.Vorto.Extensions;
+using Our.Umbraco.Vorto.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,18 +36,27 @@ namespace GMO.Umbraco
             bool forceKey = false
         )
         {
-            if (content.HasVortoValue(prop.PropertyTypeAlias, culture))
+            // Has vorto value returns false for empty vorto properties.
+            // instead of returning a vorto object with dtdGuid and value null we simply return null val.
+            if (IsVortoProperty(content, prop.PropertyTypeAlias))
             {
-                var vortoValue = content.GetVortoValue(prop.PropertyTypeAlias, culture);
-                if (vortoValue is GuidUdi guidValue)
+                if (content.HasVortoValue(prop.PropertyTypeAlias, culture))
                 {
-                    var nodeValue = umbracoHelper.TypedContent(guidValue);
+                    var vortoValue = content.GetVortoValue(prop.PropertyTypeAlias, culture);
+                    if (vortoValue is GuidUdi guidValue)
+                    {
+                        var nodeValue = umbracoHelper.TypedContent(guidValue);
 
-                    return GetNodeValue(nodeValue, forceUrl, forceKey);
+                        return GetNodeValue(nodeValue, forceUrl, forceKey);
+                    }
+                    else
+                    {
+                        return vortoValue;
+                    }
                 }
                 else
                 {
-                    return vortoValue;
+                    return null;
                 }
             }
             else if (prop.Value is IPublishedContent contentValue)
@@ -99,6 +109,17 @@ namespace GMO.Umbraco
             {
                 return node.Id.ToString();
             }
+        }
+
+        private static bool IsVortoProperty(IPublishedContent content, string propertyAlias)
+        {
+            if (content.HasValue(propertyAlias))
+            {
+                var prop = content.GetProperty(propertyAlias);
+                if (prop.Value is VortoValue) return true;
+            }
+
+            return false;
         }
     }
 }
