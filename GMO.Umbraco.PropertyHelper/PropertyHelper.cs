@@ -37,7 +37,9 @@ namespace GMO.Umbraco
         )
         {
             // Has vorto value returns false for empty vorto properties.
-            // instead of returning a vorto object with dtdGuid and value null we simply return null val.
+            // So instead of checking first with hasVortoValue, then returning prop.value of 
+            // a vorto object with dtdGuid and value null we first check IsVortoProperty.
+            // Then we can return null instead of a useless object.
             if (IsVortoProperty(content, prop.PropertyTypeAlias))
             {
                 if (content.HasVortoValue(prop.PropertyTypeAlias, culture))
