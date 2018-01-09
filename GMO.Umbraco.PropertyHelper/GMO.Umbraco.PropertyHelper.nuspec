@@ -2,7 +2,7 @@
 <package>
 	<metadata>
 		<id>GMO.Umbraco.PropertyHelper</id>
-		<version>1.1.1</version>
+		<version>1.1.2</version>
 		<title>GMO.Umbraco.PropertyHelper</title>
 		<authors>Gunnar Már Óttarsson</authors>
 		<owners>Gunnar Már Óttarsson</owners>
@@ -11,7 +11,7 @@
 		<iconUrl>https://a-v2.sndcdn.com/assets/images/sc-icons/favicon-2cadd14b.ico</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Handles retrieval of various types of property values.</description>
-		<releaseNotes>Uses GMO.Vorto now.</releaseNotes>
+		<releaseNotes>Uses GMO.Vorto 0.0.3 now.</releaseNotes>
 		<copyright>Copyright 2017</copyright>
 		<tags></tags>
 	</metadata>
